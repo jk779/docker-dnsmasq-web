@@ -1,12 +1,11 @@
 FROM alpine:latest
 
-ARG TARGETOS="linux"
-ARG TARGETARCH="arm64"
-ARG WEBPROC_VERSION="0.4.0"
-ARG WEBPROC_URL="https://github.com/jpillora/webproc/releases/download/v${WEBPROC_VERSION}/webproc_${WEBPROC_VERSION}_${TARGETOS}_${TARGETARCH}.gz"
+ARG TARGETOS=linux
+ARG TARGETARCH=arm64
+ENV WEBPROC_VERSION="0.4.0"
+ENV WEBPROC_URL="https://github.com/jpillora/webproc/releases/download/v${WEBPROC_VERSION}/webproc_${WEBPROC_VERSION}_${TARGETOS}_${TARGETARCH}.gz"
 
-RUN echo $WEBPROC_URL && \
-    apk update && \
+RUN apk update && \
     apk --no-cache add curl dnsmasq && \
     curl -L $WEBPROC_URL | gunzip -c > /usr/local/bin/webproc && \
     chmod +x /usr/local/bin/webproc
