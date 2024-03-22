@@ -14,7 +14,7 @@ RUN echo $WEBPROC_URL && \
 # configure dnsmasq
 # /etc/default/dnsmasq doesn't exist, XXX: stale config from Debian?
 # RUN echo -e "ENABLED=1\nIGNORE_RESOLVCONF=yes" > /etc/default/dnsmasq
-COPY dnsmasq.conf /etc/dnsmasq.conf
+COPY default-dnsmasq.conf /etc/dnsmasq.conf
 
 # The dhcp.leases files is put here, may want to mount as tmpfs
 # XXX: should this be preserved?
