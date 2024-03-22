@@ -24,7 +24,8 @@ COPY dnsmasq.conf /etc/dnsmasq.conf
 #  80: Web interface
 #  67: DHCP
 #  53: DNS: dns on udp, dns transfers on tcp
-EXPOSE 80/tcp 67/udp 53/tcp 53/udp
+#EXPOSE 80/tcp 67/udp 53/tcp 53/udp
+EXPOSE 80/tcp 53/tcp 53/udp
 
 ENTRYPOINT ["webproc","--port","80","--configuration-file","/etc/dnsmasq.conf","--","dnsmasq","--no-daemon"]
 

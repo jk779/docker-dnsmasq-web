@@ -1,0 +1,10 @@
+services:
+  docker-dnsmasq-web:
+    image: ghcr.io/jk779/docker-dnsmasq-web:latest
+    container_name: docker-dnsmasq-web
+    restart: unless-stopped
+    ports:
+      - '9001:80'
+    # To use a custom dnsmasq.conf file:
+    # volumes:
+    #   - '/root/docker/docker-dnsmasq-web/dnsmasq.conf:/etc/dnsmasq.conf'
