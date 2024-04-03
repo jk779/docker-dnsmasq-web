@@ -1,7 +1,7 @@
 FROM alpine:latest
 
 ARG TARGETOS=linux
-ARG TARGETARCH=arm64
+ARG TARGETARCH=amd64
 ENV WEBPROC_VERSION="0.4.0"
 ENV WEBPROC_URL="https://github.com/jpillora/webproc/releases/download/v${WEBPROC_VERSION}/webproc_${WEBPROC_VERSION}_${TARGETOS}_${TARGETARCH}.gz"
 
